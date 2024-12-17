@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    {% include 'layout/header.html' %}
+    
+    <main class="p-4">
+        <h2 class="text-xl font-semibold">Welcome to the Example Page</h2>
+        <p>This is the Example page.</p>
+        <div id="graph"></div>
+        <script src="{{ url_for('static', filename='data/example.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/example.js') }}"></script>
+    </main>
+</body>
+</html>
