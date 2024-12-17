@@ -3,8 +3,12 @@
 ## **開始使用**
 
 按照以下步驟設定環境並執行專案：
+1. 拉取專案
+```bash
+   git pull https://github.com/ATREE01/data-visualizaion.git
+```
 
-1. **建立 Python 環境**  
+2. **建立 Python 環境**  
 python版本3.12
 使用vscode建立python venv
 在`vscode`當中按下`ctrl` + `shift` + `p`
@@ -19,7 +23,7 @@ source .venv\Scripts\activate # Linux\Mac
 ```
 ![alt text](image/activate_env.png)
 應該會看到旁邊有個(.venv)
-2. 執行專案
+3. 執行專案
 
 ```bash
 pythom -u app.py
@@ -43,10 +47,9 @@ pythom -u app.py
 
 ## **GitHub 流程** *(如果使用 GitHub 的話)*
 
-1. **拉取專案並建立新分支**  
+1. **建立新分支**  
    執行以下指令：
    ```bash
-   git pull
    git checkout -b {你的分支名稱}  # 創建並切換到新的 branch
    ```
 
