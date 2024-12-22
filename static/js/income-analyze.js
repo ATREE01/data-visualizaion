@@ -1,4 +1,5 @@
-const incomeAnalyzeChart = document.getElementById('income-histogram-chart');
+const incomeBarChart = document.getElementById('incomeBarChart');
+
 const incomeData = JSON.parse(document.getElementById('incomeData').value);
 
 function unpack(rows, key) {
@@ -7,42 +8,18 @@ function unpack(rows, key) {
     });
 }
 
-const employeeCompensationTrace = {
-    x: unpack(incomeData, '地區'),
-    y: unpack(incomeData, '受僱人員報酬'),
-    name: '受僱人員報酬',
-    type: 'bar'
-};
+const data = [];
+const cateogries = ['受僱人員報酬', '產業主所得', '財產所得收入', '自用住宅設算租金收入', '經常移轉收入'];
 
-const businessOwnerIncomeTrace = {
-    x: unpack(incomeData, '地區'),
-    y: unpack(incomeData, '產業主所得'),
-    name: '產業主所得',
-    type: 'bar'
-};
-
-const propertyIncomeTrace = {
-    x: unpack(incomeData, '地區'),
-    y: unpack(incomeData, '財產所得收入'),
-    name: '財產所得收入',
-    type: 'bar'
-};
-
-const imputedRentIncomeTrace = {
-    x: unpack(incomeData, '地區'),
-    y: unpack(incomeData, '自用住宅設算租金收入'),
-    name: '自用住宅設算租金收入',
-    type: 'bar'
-};
-
-const transferIncomeTrace = {
-    x: unpack(incomeData, '地區'),
-    y: unpack(incomeData, '經常移轉收入'),
-    name: '經常移轉收入',
-    type: 'bar'
-};
-
-const data = [employeeCompensationTrace, businessOwnerIncomeTrace, propertyIncomeTrace, imputedRentIncomeTrace, transferIncomeTrace];
+cateogries.forEach((category) => {
+    const trace = {
+        x: unpack(incomeData, '地區'),
+        y: unpack(incomeData, category),
+        name: category,
+        type: 'bar'
+    }
+    data.push(trace);
+});
 
 const layout = {
     barmode: 'stack',
@@ -62,4 +39,33 @@ const layout = {
     }
 };
 
-Plotly.newPlot(incomeAnalyzeChart, data, layout);
+Plotly.newPlot(incomeBarChart, data, layout);
+
+const pieChart = document.getElementById('pieChart');
+Object.values(incomeData).forEach(regionData => {
+    const regionDiv = document.createElement('div');
+    regionDiv.id = `treemap-${regionData['地區']}`;
+    regionDiv.style.width = '50%';
+    regionDiv.style.height = '500px';
+    pieChart.appendChild(regionDiv);
+
+    const data = [{
+        type: 'pie',
+        labels: cateogries,
+        values: cateogries.map(category => regionData[category]),
+        textinfo: 'label+value+percent'
+    }]
+
+    const layout = {
+        title: {
+            text: `${regionData['地區']} 收入組成`,
+            font: {
+                family: 'Arial, sans-serif',
+                size: 24,
+                color: '#000'
+            }
+        }
+    }
+
+    Plotly.newPlot(regionDiv, data, layout);
+});
