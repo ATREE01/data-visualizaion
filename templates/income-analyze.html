@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    {% include 'layout/header.html' %}
+    
+    <main class="container mx-auto px-4 py-8">
+        <input type="hidden" id="incomeData" value="{{ incomeData }}">
+        <div class="bg-white p-6 shadow-md my-5">
+            <h2 class="text-xl font-semibold mb-4">平均家戶收入資料</h2>
+            <div class="flex  items-center">
+                <div class="w-full" id="income-histogram-chart"></div>
+                <p class="w-[30%] mx-auto text-xl text-gray-700 font-bold text-center">
+                    根據圖表分析，各地區的家戶收入結構存在明顯差異。
+                    其中，「受僱人員報酬」為大部分地區的主要收入來源，而「經常移轉收入」在某些地區也佔有顯著比例。
+                    此外，部分地區的總收入明顯高於其他地區，顯示經濟活動或就業機會的差異。
+                    尤其在六都以外地區可以看到新竹縣市的收入明顯高於其他地區。
+                </p>
+            </div>
+        </div>
+
+    </main>
+    <script src="{{ url_for('static', filename='js/income-analyze.js') }}"></script> 
+</body>
+</html>
