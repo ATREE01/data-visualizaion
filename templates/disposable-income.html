@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    {% include 'layout/header.html' %}
+    
+    <main class="container mx-auto px-4 py-8">
+        <input type="hidden" id="disposableIncomeData" value="{{ disposableIncomeData }}">
+        <div class="bg-white p-6 shadow-md my-5">
+            <h2 class="text-xl font-semibold mb-4">平均家戶可支配收入資料</h2>
+            <div class="flex  items-center">
+                <div class="w-full" id="disposableIncomeLineChart"></div>
+                <p class="w-[30%] mx-auto text-xl text-gray-700 font-bold text-center">
+                    圖表顯示，新北市及台北市雖然總收入較高，但可支配所得相對穩定。
+                    值得注意的是，新竹市的總收入達到高峰，但其可支配所得與其他地區相近，
+                    顯示出顯著的支出，可能包括住房及儲蓄，使得可支配所得未能同步提升。
+                </p>
+            </div>
+            
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/disposable-income.js') }}"></script> 
+</body>
+</html>
