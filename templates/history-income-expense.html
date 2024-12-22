@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    {% include 'layout/header.html' %}
+    
+    <main class="container mx-auto px-4 py-8">
+        <input type="hidden" id="historyData" value="{{ historyData }}">
+        <div class="bg-white p-6 shadow-md my-5">
+            <h2 class="text-xl font-semibold mb-4">歷年收支變化圖</h2>
+            <div class="flex flex-wrap justify-center" id="historyLineChart"></div>
+            
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/history-income-expense.js') }}"></script> 
+</body>
+</html>
