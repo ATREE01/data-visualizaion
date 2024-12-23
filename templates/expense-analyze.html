@@ -23,6 +23,31 @@
                 </p>
             </div>
         </div>
+		<div class="bg-white p-6 shadow-md my-5">
+			<h2 class="text-xl font-semibold mb-4">消費支出比較</h2>
+
+			<!-- 選單區域，橫向排列 + 置中 -->
+			<div class="flex justify-center space-x-4 mb-6">
+				<div>
+					<label for="compareSelect1" class="block mb-1 text-sm font-medium text-gray-700">選擇縣市 A</label>
+					<select id="compareSelect1" class="block w-full rounded border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+						<!-- 選項們 -->
+					</select>
+				</div>
+				<div>
+					<label for="compareSelect2" class="block mb-1 text-sm font-medium text-gray-700">選擇縣市 B</label>
+					<select id="compareSelect2" class="block w-full rounded border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+						<!-- 選項們 -->
+					</select>
+				</div>
+			</div>
+
+			<div class="bg-white p-6 my-5 flex justify-center">
+				<div id="compare-chart" class="mx-auto">
+					<!-- 這裡放圖表內容 -->
+				</div>
+			</div>
+		</div>
         <div class="bg-white p-6 shadow-md my-5">
             <h2 class="text-xl font-semibold mb-4">縣市支出占比</h2>
             <div class='flex flex-wrap justify-center' id="treemap"></div>
