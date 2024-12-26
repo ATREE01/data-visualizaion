@@ -5,8 +5,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10014001",
-                "COUNTYNAME": "臺東縣",
-                "name": "臺東縣"
+                "COUNTYNAME": "臺 東 縣",
+                "name": "臺 東 縣"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -1070,8 +1070,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10002001",
-                "COUNTYNAME": "宜蘭縣",
-                "name": "宜蘭縣"
+                "COUNTYNAME": "宜 蘭 縣",
+                "name": "宜 蘭 縣"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -1675,8 +1675,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "63000001",
-                "COUNTYNAME": "臺北市",
-                "name": "臺北市"
+                "COUNTYNAME": "臺 北 市",
+                "name": "臺 北 市"
             },
             "geometry": {
                 "type": "Polygon",
@@ -1910,8 +1910,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10009001",
-                "COUNTYNAME": "雲林縣",
-                "name": "雲林縣"
+                "COUNTYNAME": "雲 林 縣",
+                "name": "雲 林 縣"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -2463,8 +2463,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10003001",
-                "COUNTYNAME": "桃園市",
-                "name": "桃園市"
+                "COUNTYNAME": "桃 園 市",
+                "name": "桃 園 市"
             },
             "geometry": {
                 "type": "Polygon",
@@ -2970,8 +2970,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10013001",
-                "COUNTYNAME": "屏東縣",
-                "name": "屏東縣"
+                "COUNTYNAME": "屏 東 縣",
+                "name": "屏 東 縣"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -3751,8 +3751,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10006001",
-                "COUNTYNAME": "臺中市",
-                "name": "臺中市"
+                "COUNTYNAME": "臺 中 市",
+                "name": "臺 中 市"
             },
             "geometry": {
                 "type": "Polygon",
@@ -4426,8 +4426,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10011001",
-                "COUNTYNAME": "臺南市",
-                "name": "臺南市"
+                "COUNTYNAME": "臺 南 市",
+                "name": "臺 南 市"
             },
             "geometry": {
                 "type": "Polygon",
@@ -4901,8 +4901,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10017001",
-                "COUNTYNAME": "基隆市",
-                "name": "基隆市"
+                "COUNTYNAME": "基 隆 市",
+                "name": "基 隆 市"
             },
             "geometry": {
                 "type": "Polygon",
@@ -5052,8 +5052,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10008001",
-                "COUNTYNAME": "南投縣",
-                "name": "南投縣"
+                "COUNTYNAME": "南 投 縣",
+                "name": "南 投 縣"
             },
             "geometry": {
                 "type": "Polygon",
@@ -5863,8 +5863,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10016001",
-                "COUNTYNAME": "澎湖縣",
-                "name": "澎湖縣"
+                "COUNTYNAME": "澎 湖 縣",
+                "name": "澎 湖 縣"
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -6360,8 +6360,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10005001",
-                "COUNTYNAME": "苗栗縣",
-                "name": "苗栗縣"
+                "COUNTYNAME": "苗 栗 縣",
+                "name": "苗 栗 縣"
             },
             "geometry": {
                 "type": "Polygon",
@@ -6835,8 +6835,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10020001",
-                "COUNTYNAME": "嘉義市",
-                "name": "嘉義市"
+                "COUNTYNAME": "嘉 義 市",
+                "name": "嘉 義 市"
             },
             "geometry": {
                 "type": "Polygon",
@@ -6942,8 +6942,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10004001",
-                "COUNTYNAME": "新竹縣",
-                "name": "新竹縣"
+                "COUNTYNAME": "新 竹 縣",
+                "name": "新 竹 縣"
             },
             "geometry": {
                 "type": "Polygon",
@@ -7505,8 +7505,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10001001",
-                "COUNTYNAME": "新北市",
-                "name": "新北市"
+                "COUNTYNAME": "新 北 市",
+                "name": "新 北 市"
             },
             "geometry": {
                 "type": "Polygon",
@@ -8458,8 +8458,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10015001",
-                "COUNTYNAME": "花蓮縣",
-                "name": "花蓮縣"
+                "COUNTYNAME": "花 蓮 縣",
+                "name": "花 蓮 縣"
             },
             "geometry": {
                 "type": "Polygon",
@@ -9413,8 +9413,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10012001",
-                "COUNTYNAME": "高雄市",
-                "name": "高雄市"
+                "COUNTYNAME": "高 雄 市",
+                "name": "高 雄 市"
             },
             "geometry": {
                 "type": "Polygon",
@@ -10232,8 +10232,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10007001",
-                "COUNTYNAME": "彰化縣",
-                "name": "彰化縣"
+                "COUNTYNAME": "彰 化 縣",
+                "name": "彰 化 縣"
             },
             "geometry": {
                 "type": "Polygon",
@@ -10571,8 +10571,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10010001",
-                "COUNTYNAME": "嘉義縣",
-                "name": "嘉義縣"
+                "COUNTYNAME": "嘉 義 縣",
+                "name": "嘉 義 縣"
             },
             "geometry": {
                 "type": "Polygon",
@@ -11388,8 +11388,8 @@
             "type": "Feature",
             "properties": {
                 "COUNTYSN": "10018001",
-                "COUNTYNAME": "新竹市",
-                "name": "新竹市"
+                "COUNTYNAME": "新 竹 市",
+                "name": "新 竹 市"
             },
             "geometry": {
                 "type": "Polygon",

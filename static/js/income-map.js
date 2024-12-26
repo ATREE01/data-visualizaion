@@ -15,7 +15,7 @@ function draw_map(incomeData, geo_data) {
     for(let i=0; i<geo_data.features.length; i++) {
         all_cities.push(geo_data.features[i].properties.COUNTYNAME);
     }
-    
+    console.log(all_cities.sort())
     let trace1 = {
         type:"choropleth",
         locationmode: "geojson-id",
@@ -41,14 +41,14 @@ function draw_map(incomeData, geo_data) {
     };
     trace1.locations.shift()
     trace1.z.shift()
-    console.log(trace1.z)
-    console.log(trace1.geojson)
-    console.log(trace1.locations)
+    // console.log(trace1.z)
+    // console.log(trace1.geojson)
+    console.log(trace1.locations.sort())
 
     let data = [trace1];
     let layout = {
         title: {
-            text: "112學年各縣市所得收入總計",
+            text: "112年各縣市所得收入總計",
             font: {
                 size: 40,
                 color: "black"
