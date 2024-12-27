@@ -8,22 +8,114 @@
 </head>
 <body>
     {% include 'layout/header.html' %}
-    
+
     <main class="container mx-auto px-4 py-8">
+        <!-- 隱藏的 JSON 資料 -->
         <input type="hidden" id="disposableIncomeData" value="{{ disposableIncomeData }}">
+
+        <!-- 可支配所得中位數或平均數選擇區域 -->
         <div class="bg-white p-6 shadow-md my-5">
-            <h2 class="text-xl font-semibold mb-4">平均家戶可支配收入資料</h2>
-            <div class="flex  items-center">
-                <div class="w-full" id="disposableIncomeLineChart"></div>
-                <p class="w-[30%] mx-auto text-xl text-gray-700 font-bold text-center">
-                    圖表顯示，新北市及台北市雖然總收入較高，但可支配所得相對穩定。
-                    值得注意的是，新竹市的總收入達到高峰，但其可支配所得與其他地區相近，
-                    顯示出顯著的支出，可能包括住房及儲蓄，使得可支配所得未能同步提升。
-                </p>
-            </div>
+            <h2 class="text-xl font-semibold mb-4">可支配所得(中位數或平均數)</h2>
             
+            <!-- 選擇顯示類型 -->
+            <div class="mb-4">
+                <label for="incomeType" class="text-gray-700 font-medium">選擇顯示可支配所得的類型：</label>
+                <select id="incomeType" class="ml-2 border border-gray-300 rounded px-2 py-1">
+                    <option value="可支配所得(平均數)">平均數</option>
+                    <option value="可支配所得(中位數)">中位數</option>
+                </select>
+            </div>
+
+            <!-- 圖表區 -->
+            <div id="disposableIncomeBarChart" class="w-full"></div>
+        </div>
+
+        <!-- 差值條形圖區域 -->
+        <div class="bg-white p-6 shadow-md my-5">
+            <h2 class="text-xl font-semibold mb-4">各地區可支配所得平均數與中位數差異</h2>
+            <div id="incomeDifferenceBarChart" class="w-full"></div>
+        </div>
+
+        <!-- 新竹市差距解釋文字說明 -->
+        <div class="bg-white p-6 shadow-md my-5">
+            <h3 class="text-lg font-semibold mb-4">新竹市收入差距說明</h3>
+            <p class="text-gray-700">
+                上圖顯示新竹市在可支配收入的平均表現非常優異，甚至高於作為首都的台北市。
+                這是由於新竹科學園區的工程師普遍收入都不錯，因此將新竹市的平均收入拉高。
+                而這部分也可以看到中位數的表現與平均差距非常大，有看起來貧富不均的現象，這也佐證了上面的觀察。
+            </p>
         </div>
     </main>
-    <script src="{{ url_for('static', filename='js/disposable-income.js') }}"></script> 
+
+    <!-- 自訂 JavaScript -->
+    <script>
+        // 初始化資料
+        const disposableIncomeData = JSON.parse(document.getElementById("disposableIncomeData").value);
+
+        // 生成可支配所得的中位數或平均數條形圖
+        function generateDisposableIncomeBarChart(selectedType) {
+            const xData = disposableIncomeData.map(item => item["地區"]); // 地區
+            const yData = disposableIncomeData.map(item => item[selectedType]); // 選擇的類型
+
+            const trace = {
+                x: xData,
+                y: yData,
+                type: 'bar',
+                marker: {
+                    color: '#E27D60'  // 設置顏色為橘色
+                }
+            };
+
+            const layout = {
+                title: `各地區可支配所得 - ${selectedType}`,
+                xaxis: { title: '地區' },
+                yaxis: { title: selectedType },
+                margin: { t: 50, b: 100 }
+            };
+
+            Plotly.newPlot('disposableIncomeBarChart', [trace], layout);
+        }
+
+        // 生成差值條形圖
+        function generateDifferenceBarChart() {
+            const xData = disposableIncomeData.map(item => item["地區"]); // 地區
+            const differences = disposableIncomeData.map(item => 
+                item["可支配所得(平均數)"] - item["可支配所得(中位數)"]
+            ); // 差值
+
+            const trace = {
+                x: xData,
+                y: differences,
+                type: 'bar',
+                marker: {
+                    color: xData.map(region => 
+                        region.includes("新 竹 市") ? '#44BEE6' : '#4A90E2' // 特別標示新竹
+                    )
+                },
+                text: differences.map(diff => diff.toFixed(0)), // 顯示差值
+                textposition: 'outside',
+            };
+
+            const layout = {
+                title: '各地區可支配所得平均數與中位數差異',
+                xaxis: { title: '地區' },
+                yaxis: { title: '平均數與中位數差異', zeroline: false },
+                margin: { t: 50, b: 100 }
+            };
+
+            Plotly.newPlot('incomeDifferenceBarChart', [trace], layout);
+        }
+
+        // 初次渲染圖表
+        const incomeTypeSelector = document.getElementById("incomeType");
+
+        generateDisposableIncomeBarChart(incomeTypeSelector.value); // 可支配所得中位數或平均數柱狀圖
+        generateDifferenceBarChart(); // 差值柱狀圖
+
+        // 當選項改變時更新可支配所得中位數或平均數圖表
+        incomeTypeSelector.addEventListener("change", (event) => {
+            generateDisposableIncomeBarChart(event.target.value);
+        });
+    </script>
 </body>
 </html>
