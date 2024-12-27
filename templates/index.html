@@ -18,19 +18,32 @@
 
       <section class="bg-white p-6 rounded-lg shadow-md my-5">
         <h2 class="text-xl p-3">112年度家庭收支資料視覺化專區</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           <a href="income-analyze" class="block bg-yellow-500 text-white text-center p-4 rounded-lg shadow hover:bg-yellow-600">家庭收入分析</a>
           <a href="expense-analyze" class="block bg-green-500 text-white text-center p-4 rounded-lg shadow hover:bg-green-600">家庭支出分析</a>
           <a href="disposable-income" class="block bg-blue-500 text-white text-center p-4 rounded-lg shadow hover:bg-blue-600">消費與可支配所得之間的關係</a>
         </div>
-    </section>
+      </section>
 
-    <section class="bg-white p-6 rounded-lg shadow-md my-5">
-      <h2 class="text-xl p-3">歷史資料</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <a href="" class="block bg-red-500 text-white text-center p-4 rounded-lg shadow hover:bg-red-600">歷年收支變化</a>
-      </div> 
-  </section>
-  </main>
+      <section class="bg-white p-6 rounded-lg shadow-md my-5">
+        <h2 class="text-xl p-3">歷史資料</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <a href="history-income-expense" class="block bg-red-500 text-white text-center p-4 rounded-lg shadow hover:bg-red-600">歷年收支變化</a>
+        </div> 
+      </section>
+      
+      <!-- 地圖圖表容器 -->
+      <input type="hidden" id="incomeData" value="{{ incomeData }}">
+      <input type="hidden" id="expenseData" value="{{ expenseData }}">
+      <input type="hidden" id="geo_data" value="{{ geo_data }}">
+      
+      <section class="bg-white p-6 rounded-lg shadow-md my-5">
+        <div class="grid grid-cols-2 gap-4">
+          <div id="income_map" class="w-auto h-96"></div>  <!-- 地圖圖表顯示區域 -->
+          <div id="expense_map" class="w-auto h-96"></div>  <!-- 地圖圖表顯示區域 -->
+        <div>
+      </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/income-map.js') }}"></script>
 </body>
 </html>
