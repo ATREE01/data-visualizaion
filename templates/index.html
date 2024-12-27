@@ -34,11 +34,14 @@
       
       <!-- 地圖圖表容器 -->
       <input type="hidden" id="incomeData" value="{{ incomeData }}">
+      <input type="hidden" id="expenseData" value="{{ expenseData }}">
       <input type="hidden" id="geo_data" value="{{ geo_data }}">
       
       <section class="bg-white p-6 rounded-lg shadow-md my-5">
-        
-        <div id="mapChart" class="w-full h-96"></div>  <!-- 地圖圖表顯示區域 -->
+        <div class="grid grid-cols-2 gap-4">
+          <div id="income_map" class="w-auto h-96"></div>  <!-- 地圖圖表顯示區域 -->
+          <div id="expense_map" class="w-auto h-96"></div>  <!-- 地圖圖表顯示區域 -->
+        <div>
       </section>
     </main>
     <script src="{{ url_for('static', filename='js/income-map.js') }}"></script>

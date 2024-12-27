@@ -11,7 +11,8 @@ def home():
     geo_data = json.dumps(geo_data)
     df = pd.read_csv("data/112家庭收入.csv")
     incomeData = df.to_json(orient='records')
-    
-    return render_template('index.html', incomeData=incomeData, geo_data=geo_data)
+    df = pd.read_csv("data/112家庭支出.csv")
+    expenseData = df.to_json(orient="records")
+    return render_template('index.html', incomeData=incomeData, expenseData=expenseData, geo_data=geo_data)
 
 
