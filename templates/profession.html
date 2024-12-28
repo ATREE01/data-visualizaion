@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        {% include 'layout/header.html' %}
+        
+        <main class="container mx-auto px-4 py-8">
+            <input type="hidden" id="professionData" value="{{ professionData }}">
+            <div class="bg-white p-6 shadow-md my-5">
+                <h2 class="text-xl font-semibold mb-4">個職業類別與收支關係圖</h2>
+                <div class="flex flex-wrap">
+                    <div class="" id="professionChart1"></div>
+                    <div class="" id="professionChart2"></div>
+                    <div class="" id="professionChart3"></div>
+                    <div class="" id="professionChart4"></div>
+                </div>
+            </div>
+            <p class="w-[70%] mx-auto text-xl text-gray-700 font-bold text-center">
+                藉由觀察上述四張圖表，可以看出不同職業的收入高低，並探討其中可能存在差別的原因。<br>
+                除此之外，對於如何控管金錢，無論是進行消費行為又或是儲蓄，都進一步說明了不同職業家庭的觀念差異:<br>
+                這可能與家庭生活習慣、家境狀況、從小到大所培養的價值觀有關。
+            </p>
+        </main>
+        <script src="{{ url_for('static', filename='js/profession.js') }}"></script> 
+    </body>
+</html>
