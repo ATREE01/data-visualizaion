@@ -17,7 +17,7 @@ const data1=[], data2=[], data3=[], data4 = [];
 for (let i = 10; i > 0; i--) {
     data1.push({
         type: "histogram",
-        y: [infor[0][i]],
+        x: [infor[0][i]],
         opacity: 0.9,
         name: pN[i-1]
     });
@@ -26,7 +26,7 @@ for (let i = 10; i > 0; i--) {
 for (let i = 10; i > 0; i--) {
     data2.push({
         type: "histogram",
-        y: [infor[1][i]],
+        x: [infor[1][i]],
         opacity: 0.9,
         name: pN[i-1]
     });
@@ -35,7 +35,7 @@ for (let i = 10; i > 0; i--) {
 for (let i = 10; i > 0; i--) {
     data3.push({
         type: "histogram",
-        y: [infor[2][i]],
+        x: [infor[2][i]],
         opacity: 0.9,
         name: pN[i-1]
     });
@@ -44,7 +44,7 @@ for (let i = 10; i > 0; i--) {
 for (let i = 10; i > 0; i--) {
     data4.push({
         type: "histogram",
-        y: [infor[3][i]],
+        x: [infor[3][i]],
         opacity: 0.9,
         name: pN[i-1]
     });
@@ -61,13 +61,12 @@ const layout1 = {
     },
     xaxis: {
         title: '職業數量累計',
-        tickvals:[0,1,2,3,4,5,6,7],
-        ticktext: ["0","1","2","3","4","5","6","7"],
     },
     yaxis: {
         title: '所得收入總計',
+        tickvals:[0,1,2,3,4,5,6,7],
+        ticktext: ["0","1","2","3","4","5","6","7"],
     },
-    width: 1000,
     height: 400,
     barmode: "stack",//"stack", "group", "overlay"
 };
@@ -83,13 +82,12 @@ const layout2 = {
     },
     xaxis: {
         title: '職業數量累計',
+    },
+    yaxis: {
+        title: '非消費支出',
         tickvals:[0,1,2,3,4,5,6,7],
         ticktext: ["0","1","2","3","4","5","6","7"],
     },
-    yaxis: {
-        title: '非消費支出'
-    },
-    width: 1000,
     height: 400,
     barmode: "stack",//"stack", "group", "overlay"
 };
@@ -105,13 +103,12 @@ const layout3 = {
     },
     xaxis: {
         title: '職業數量累計',
+    },
+    yaxis: {
+        title: '消費支出',
         tickvals:[0,1,2,3,4,5,6,7],
         ticktext: ["0","1","2","3","4","5","6","7"],
     },
-    yaxis: {
-        title: '消費支出'
-    },
-    width: 1000,
     height: 400,
     barmode: "stack",//"stack", "group", "overlay"
 };
@@ -127,13 +124,12 @@ const layout4 = {
     },
     xaxis: {
         title: '職業數量累計',
+    },
+    yaxis: {
+        title: '儲蓄金額',
         tickvals:[0,1,2,3,4,5,6,7],
         ticktext: ["0","1","2","3","4","5","6","7"],
     },
-    yaxis: {
-        title: '儲蓄金額'
-    },
-    width: 1000,
     height: 400,
     barmode: "stack",//"stack", "group", "overlay"
 };
