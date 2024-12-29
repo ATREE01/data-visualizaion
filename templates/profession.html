@@ -13,7 +13,7 @@
         <main class="container mx-auto px-4 py-8">
             <input type="hidden" id="professionData" value="{{ professionData }}">
             <div class="bg-white p-6 shadow-md my-5">
-                <h2 class="text-xl font-semibold mb-4">個職業類別與收支關係圖</h2>
+                <h2 class="text-xl font-semibold mb-4">各職業類別的收支關係圖</h2>
                 <div class="flex flex-wrap">
                     <div class="" id="professionChart1"></div>
                     <div class="" id="professionChart2"></div>
@@ -25,6 +25,16 @@
                 藉由觀察上述四張圖表，可以看出不同職業的收入高低，並探討其中可能存在差別的原因。<br>
                 除此之外，對於如何控管金錢，無論是進行消費行為又或是儲蓄，都進一步說明了不同職業家庭的觀念差異:<br>
                 這可能與家庭生活習慣、家境狀況、從小到大所培養的價值觀有關。
+            </p>
+            <input type="hidden" id="professionData1" value="{{ professionData1 }}">
+            <br><br><br><br><br><br>
+            <h2 class="bg-white p-6 text-xl font-semibold mb-4">農與非農家的收支關係圖</h2>
+            <div class="flex justify-center" id="professionChart5"></div>
+            <p class="w-[70%] mx-auto text-xl text-gray-700 font-bold text-center">
+                透過此表格，可以看出農家與非農家間平均收入的高低，以及其他支出或儲蓄存在差別的原因。<br>
+                普遍民眾對於農家抱有偏見，無論是冠上"鄉下人"的頭銜，亦或是對其貧苦樸素的生活方式感到不齒，<br>
+                然而，從上述表格中可以看出，其實兩者間並經濟的收入並無太大的區別。<br>
+                俗話說的好: 民以食為天，與其冷眼嘲諷，不如心生感激地為他們的付出道謝。
             </p>
         </main>
         <script src="{{ url_for('static', filename='js/profession.js') }}"></script> 
