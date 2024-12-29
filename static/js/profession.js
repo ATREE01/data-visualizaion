@@ -60,10 +60,10 @@ const layout1 = {
         }
     },
     xaxis: {
-        title: '職業數量累計',
+        title: '所得收入總計',
     },
     yaxis: {
-        title: '所得收入總計',
+        title: '職業數量累計',
         tickvals:[0,1,2,3,4,5,6,7],
         ticktext: ["0","1","2","3","4","5","6","7"],
     },
@@ -81,10 +81,10 @@ const layout2 = {
         }
     },
     xaxis: {
-        title: '職業數量累計',
+        title: '非消費支出',
     },
     yaxis: {
-        title: '非消費支出',
+        title: '職業數量累計',
         tickvals:[0,1,2,3,4,5,6,7],
         ticktext: ["0","1","2","3","4","5","6","7"],
     },
@@ -102,10 +102,10 @@ const layout3 = {
         }
     },
     xaxis: {
-        title: '職業數量累計',
+        title: '消費支出',
     },
     yaxis: {
-        title: '消費支出',
+        title: '職業數量累計',
         tickvals:[0,1,2,3,4,5,6,7],
         ticktext: ["0","1","2","3","4","5","6","7"],
     },
@@ -123,10 +123,10 @@ const layout4 = {
         }
     },
     xaxis: {
-        title: '職業數量累計',
+        title: '儲蓄金額',
     },
     yaxis: {
-        title: '儲蓄金額',
+        title: '職業數量累計',
         tickvals:[0,1,2,3,4,5,6,7],
         ticktext: ["0","1","2","3","4","5","6","7"],
     },
